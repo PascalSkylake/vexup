@@ -535,7 +535,7 @@ async fn main() -> anyhow::Result<()> {
 
     let http_addr: SocketAddr = "0.0.0.0:80".parse().unwrap();
     info!("HTTP on http://{}/upload, /run, /stop", http_addr);
-c    info!("TCP stdio on tcp://0.0.0.0:8903 (use: nc localhost 8903)");
+    info!("TCP stdio on tcp://0.0.0.0:8903 (use: nc localhost 8903)");
 
     axum::serve(tokio::net::TcpListener::bind(http_addr).await?, app).await?;
     Ok(())
